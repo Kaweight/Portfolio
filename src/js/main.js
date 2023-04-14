@@ -9,6 +9,7 @@ const footerYear = document.querySelector(".footer__year");
 const btnScroll = document.querySelector(".scroll-to-up");
 const main = document.querySelector(".main");
 const footer = document.querySelector(".footer");
+const msgStatus = document.querySelector(".contact__form-msg");
 
 const handleNav = () => {
   navBtn.classList.toggle("is-active");
@@ -50,6 +51,24 @@ const handleScrollBar = () => {
     ? btnScroll.classList.add("scroll-to-up-active")
     : btnScroll.classList.remove("scroll-to-up-active");
 };
+
+if (document.location.search === "?mail_status=sent") {
+  msgStatus.classList.add("contact__form-msg-success");
+  msgStatus.textContent = "Message sent!";
+
+  setTimeout(() => {
+    msgStatus.classList.remove("contact__form-msg-success");
+  }, 5000);
+}
+
+if (document.location.search === "?mail_status=error") {
+  msgStatus.classList.add("contact__form-msg-error");
+  msgStatus.textContent = "An error occurred.";
+
+  setTimeout(() => {
+    msgStatus.classList.remove("contact__form-msg-error");
+  }, 5000);
+}
 
 handleCurrentYear();
 navBtn.addEventListener("click", handleNav);

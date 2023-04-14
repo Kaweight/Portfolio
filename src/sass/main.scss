@@ -599,6 +599,28 @@ body {
       background-color: $blueGreen;
     }
   }
+
+  &__form-msg {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    color: $white;
+    font-size: 2rem;
+    margin-top: 2em;
+    border-radius: 12px;
+    padding: 1.5em;
+    height: 2em;
+  }
+
+  &__form-msg-success {
+    display: flex;
+    background-color: hsl(143, 73%, 55%);
+  }
+
+  &__form-msg-error {
+    display: flex;
+    background-color: hsl(9, 100%, 64%);
+  }
 }
 
 //footer
